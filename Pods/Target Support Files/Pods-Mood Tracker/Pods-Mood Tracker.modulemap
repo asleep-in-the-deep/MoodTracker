@@ -1,0 +1,6 @@
+framework module Pods_Mood_Tracker {
+  umbrella header "Pods-Mood Tracker-umbrella.h"
+
+  export *
+  module * { export * }
+}
