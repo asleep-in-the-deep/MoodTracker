@@ -39,7 +39,7 @@ class NotificationManager: NSObject, UNUserNotificationCenterDelegate {
         
         notificationCenter.add(request) { error in
             if error != nil {
-                print(error?.localizedDescription)
+                print(error!.localizedDescription)
             }
         }
     }

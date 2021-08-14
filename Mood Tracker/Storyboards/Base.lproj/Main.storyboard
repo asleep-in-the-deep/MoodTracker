@@ -190,17 +190,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <datePicker contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="compact" translatesAutoresizingMaskIntoConstraints="NO" id="5gK-N0-peR">
+                                <rect key="frame" x="147" y="103" width="120" height="50"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="IHP-dp-oRs"/>
+                                    <constraint firstAttribute="width" constant="120" id="ONb-A3-Isd"/>
+                                </constraints>
+                            </datePicker>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="hlE-P9-rgL">
-                                <rect key="frame" x="20" y="108" width="374" height="449.5"/>
+                                <rect key="frame" x="20" y="173" width="374" height="389"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date: July 15, 2021" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SCN-cX-djN">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="VAR-bk-1fT">
-                                        <rect key="frame" x="0.0" y="60.5" width="374" height="31"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="31"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mood" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="axb-Cq-Dp7">
                                                 <rect key="frame" x="0.0" y="0.0" width="48" height="31"/>
@@ -223,7 +225,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="VA9-Uj-1Ha">
-                                        <rect key="frame" x="0.0" y="131.5" width="374" height="31"/>
+                                        <rect key="frame" x="0.0" y="71" width="374" height="31"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Annoyance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Kd-nw-d4V">
                                                 <rect key="frame" x="0.0" y="0.0" width="94" height="31"/>
@@ -243,7 +245,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="65" translatesAutoresizingMaskIntoConstraints="NO" id="5Kg-3i-Z7d">
-                                        <rect key="frame" x="0.0" y="202.5" width="374" height="31"/>
+                                        <rect key="frame" x="0.0" y="142" width="374" height="31"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Anxiety" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a9n-Rt-oU4">
                                                 <rect key="frame" x="0.0" y="0.0" width="64" height="31"/>
@@ -263,7 +265,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="70" translatesAutoresizingMaskIntoConstraints="NO" id="p9s-fG-dyt">
-                                        <rect key="frame" x="0.0" y="273.5" width="374" height="31"/>
+                                        <rect key="frame" x="0.0" y="213" width="374" height="31"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Energy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vPy-Eu-dEx">
                                                 <rect key="frame" x="0.0" y="0.0" width="59" height="31"/>
@@ -284,7 +286,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="PsI-tO-uBG">
-                                        <rect key="frame" x="0.0" y="344.5" width="374" height="31"/>
+                                        <rect key="frame" x="0.0" y="284" width="374" height="31"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Self esteem" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="giP-5N-1mb">
                                                 <rect key="frame" x="0.0" y="0.0" width="99.5" height="31"/>
@@ -305,7 +307,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="45" translatesAutoresizingMaskIntoConstraints="NO" id="gXq-EU-Lfe">
-                                        <rect key="frame" x="0.0" y="415.5" width="374" height="34"/>
+                                        <rect key="frame" x="0.0" y="355" width="374" height="34"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sleep time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JG3-cm-iAV">
                                                 <rect key="frame" x="0.0" y="0.0" width="89" height="34"/>
@@ -326,8 +328,10 @@
                         <viewLayoutGuide key="safeArea" id="Bt8-Gc-2PN"/>
                         <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="5gK-N0-peR" firstAttribute="top" secondItem="Bt8-Gc-2PN" secondAttribute="top" constant="15" id="0fs-9i-JNt"/>
+                            <constraint firstItem="hlE-P9-rgL" firstAttribute="top" secondItem="5gK-N0-peR" secondAttribute="bottom" constant="20" id="RYH-f5-NR1"/>
                             <constraint firstAttribute="trailing" secondItem="hlE-P9-rgL" secondAttribute="trailing" constant="20" id="WDZ-b0-Q1t"/>
-                            <constraint firstItem="hlE-P9-rgL" firstAttribute="top" secondItem="Bt8-Gc-2PN" secondAttribute="top" constant="20" id="hhB-uv-F3m"/>
+                            <constraint firstItem="5gK-N0-peR" firstAttribute="centerX" secondItem="Bt8-Gc-2PN" secondAttribute="centerX" id="XLY-Wb-oBO"/>
                             <constraint firstItem="hlE-P9-rgL" firstAttribute="leading" secondItem="Bt8-Gc-2PN" secondAttribute="leading" constant="20" id="j3F-DG-wlm"/>
                         </constraints>
                     </view>
@@ -348,7 +352,7 @@
                     <connections>
                         <outlet property="annoyanceSegmentedControl" destination="1AY-MW-Otp" id="Drg-tV-Oxq"/>
                         <outlet property="anxietySegmentedControl" destination="1WX-0Y-n6K" id="AcR-qu-yuG"/>
-                        <outlet property="dateLabel" destination="SCN-cX-djN" id="1N7-0e-UKn"/>
+                        <outlet property="datePicker" destination="5gK-N0-peR" id="Oge-Si-rQr"/>
                         <outlet property="energySegmentedControl" destination="R91-Ev-r1o" id="0Rc-Hu-NU8"/>
                         <outlet property="moodSegmetedControl" destination="NbT-ol-LhI" id="kTm-fD-IbJ"/>
                         <outlet property="saveButton" destination="9Fi-J3-zf1" id="DBT-Ov-mB1"/>
@@ -360,7 +364,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="afE-FL-qfu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="KFx-om-Qvl" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3774" y="76"/>
+            <point key="canvasLocation" x="3773.913043478261" y="75.669642857142847"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="sdD-zq-gwc">
@@ -613,7 +617,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="d78-fp-sJv"/>
+        <segue reference="hl2-zp-Goq"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="calendar" catalog="system" width="128" height="106"/>

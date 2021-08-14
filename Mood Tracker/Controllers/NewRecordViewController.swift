@@ -7,14 +7,13 @@
 
 import UIKit
 import Firebase
-import HealthKit
 
 class NewRecordViewController: UIViewController {
     
     let database = Firestore.firestore()
     
     let dateManager = DateManager()
-    
+        
     var currentRecord: Record!
     var addedRecords: [Record] = []
     
@@ -36,8 +35,8 @@ class NewRecordViewController: UIViewController {
     }
     
     @IBOutlet weak var saveButton: UIBarButtonItem!
-    
-    @IBOutlet weak var dateLabel: UILabel!
+        
+    @IBOutlet weak var datePicker: UIDatePicker!
     
     @IBOutlet weak var moodSegmetedControl: UISegmentedControl!
     @IBOutlet weak var annoyanceSegmentedControl: UISegmentedControl!
@@ -74,7 +73,7 @@ class NewRecordViewController: UIViewController {
     
     func setScreen() {
         if currentRecord != nil {
-            dateLabel.text = dateManager.dateToString(date: currentRecord.date)
+            datePicker.date = currentRecord.date
             
             moodSegmetedControl.selectedSegmentIndex = currentRecord.mood
             annoyanceSegmentedControl.selectedSegmentIndex = currentRecord.annoyance
@@ -84,7 +83,7 @@ class NewRecordViewController: UIViewController {
             
             sleepTimeTextField.text = currentRecord.sleepTime
         } else {
-            dateLabel.text = dateManager.dateToString(date: Date())
+            datePicker.date = Date()
         }
     }
     
@@ -116,44 +115,13 @@ class NewRecordViewController: UIViewController {
         sublayer.addSubview(activityIndicator)
         activityIndicator.startAnimating()
     }
-
-}
-
-extension NewRecordViewController {
     
-    func readSleep() {
-        let healthStore = HKHealthStore()
-        var sleepDuration: Int = 0
-        
-        if let sleepType = HKObjectType.categoryType(forIdentifier: .sleepAnalysis) {
-            let sortDescriptor = NSSortDescriptor(key: HKSampleSortIdentifierEndDate, ascending: false)
-            let query = HKSampleQuery(sampleType: sleepType, predicate: nil, limit: 10, sortDescriptors: [sortDescriptor]) { query, result, error in
-                if error != nil {
-                    print(error?.localizedDescription)
-                }
-                if let result = result {
-                    for item in result {
-                        if let sample = item as? HKCategorySample {
-                            let value = (sample.value == HKCategoryValueSleepAnalysis.inBed.rawValue) ? "InBed" : "Asleep"
-                            if value == "Asleep" {
-                                let calendar = Calendar.current
-                                let dayBefore = calendar.date(byAdding: .day, value: -1, to: Date())!
-                                let range = dayBefore...Date()
-                                
-                                if range.contains(sample.startDate) {
-                                    let timeInterval = Int(
-                                        (sample.endDate).timeIntervalSince(sample.startDate))
-                                    sleepDuration += timeInterval
-                                    self.sleepDuration = sleepDuration
-                                }
-                            }
-                        }
-                    }
-                    self.setSleepTime()
-                    self.observer = "done"
-                }
-            }
-            healthStore.execute(query)
-        }
+    func showAlert(title: String, message: String) {
+        let errorAlert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        errorAlert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: nil))
+        self.present(errorAlert, animated: true, completion: nil)
     }
+
 }
+
+

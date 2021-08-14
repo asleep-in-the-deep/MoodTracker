@@ -32,6 +32,7 @@ class ChartViewController: UIViewController {
         
         formatData()
         setLineChart(dataPoints: dates, values: moods)
+        
     }
     
     @IBAction func closeTapped(_ sender: Any) {
@@ -52,6 +53,9 @@ class ChartViewController: UIViewController {
         moodChartView.leftAxis.drawGridLinesEnabled = false
         moodChartView.leftAxis.axisMaximum = 6.0
         moodChartView.leftAxis.axisMinimum = 0.0
+        
+        moodChartView.setVisibleXRangeMaximum(10)
+        moodChartView.xAxis.labelCount = 10
     }
     
     func formatData() {
@@ -86,6 +90,9 @@ class ChartViewController: UIViewController {
         
         let XAxis = moodChartView.xAxis
         XAxis.valueFormatter = axisFormatDelegate
+        
+        moodChartView.scaleXEnabled = true
+        moodChartView.scaleYEnabled = false
     }
     
 }
