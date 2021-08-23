@@ -8,11 +8,11 @@
 import Foundation
 
 class DateManager {
-    
-    func getCurrentDate() -> Date? {
+        
+    func getCurrentDate(date: Date = Date()) -> Date? {
         let calendar = Calendar.current
         
-        var components = calendar.dateComponents([.year, .month, .day, .hour, .minute, .second], from: Date())
+        var components = calendar.dateComponents([.year, .month, .day, .hour, .minute, .second], from: date)
         
         components.hour = 0
         components.minute = 0

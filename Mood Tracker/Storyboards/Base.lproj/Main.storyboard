@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="c5w-gO-b0x">
-                                <rect key="frame" x="0.0" y="98" width="414" height="715"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="20" minimumInteritemSpacing="20" id="dN7-p9-iCq">
                                     <size key="itemSize" width="414" height="120"/>
@@ -147,7 +147,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="c5w-gO-b0x" secondAttribute="bottom" id="NKA-cV-oMC"/>
                             <constraint firstItem="c5w-gO-b0x" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="PPE-tr-XmX"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="c5w-gO-b0x" secondAttribute="trailing" id="PRK-Gf-vja"/>
-                            <constraint firstItem="c5w-gO-b0x" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="niQ-7h-daa"/>
+                            <constraint firstItem="c5w-gO-b0x" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="niQ-7h-daa"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Mood Records" id="B70-Be-gtc">
@@ -191,11 +191,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <datePicker contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="compact" translatesAutoresizingMaskIntoConstraints="NO" id="5gK-N0-peR">
-                                <rect key="frame" x="147" y="103" width="120" height="50"/>
+                                <rect key="frame" x="142" y="103" width="130" height="50"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="IHP-dp-oRs"/>
-                                    <constraint firstAttribute="width" constant="120" id="ONb-A3-Isd"/>
+                                    <constraint firstAttribute="width" constant="130" id="ONb-A3-Isd"/>
                                 </constraints>
                             </datePicker>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="hlE-P9-rgL">

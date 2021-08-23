@@ -29,11 +29,22 @@ extension HomeViewController: FSCalendarDelegate, FSCalendarDataSource {
         calendar.appearance.todayColor = .systemIndigo
         
         calendar.firstWeekday = 2
+        calendar.formatter.timeZone = TimeZone.current
+    }
+    
+    func setDateRange(date: Date) -> ClosedRange<Date> {
+        let startDay = date.addingTimeInterval(-21*60*60)
+        let endDay = date.addingTimeInterval(3*60*60)
+        let range = startDay...endDay
+        
+        return range
     }
 
     func calendar(_ calendar: FSCalendar, subtitleFor date: Date) -> String? {
         for record in records {
-            if record.date == date {
+            let range = setDateRange(date: date)
+                        
+            if range.contains(record.date) {
                 return String(record.mood)
             }
         }
@@ -53,8 +64,9 @@ extension HomeViewController: FSCalendarDelegate, FSCalendarDataSource {
     
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
         for record in records {
-            if record.date == date {
-                
+            let range = setDateRange(date: date)
+            
+            if range.contains(record.date) {
                 for view in view.subviews {
                     if view.tag == 100 {
                         view.removeFromSuperview()

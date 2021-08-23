@@ -9,6 +9,8 @@ import UIKit
 
 class RecordViewCell: UICollectionViewCell {
     
+    let dateManager = DateManager()
+    
     @IBOutlet weak var moodEmoji: UILabel!
     @IBOutlet weak var moodLabel: UILabel!
     
@@ -27,6 +29,20 @@ class RecordViewCell: UICollectionViewCell {
         layer.borderWidth = 1
     }
     
+    func setCell(for record: Record) {
+        moodEmoji.text = setMoodEmoji(for: record.mood)
+        moodLabel.text = String(record.mood)
+        
+        dateLabel.text = dateManager.dateToString(date: record.date)
+        
+        sleepTimeLabel.text = "🌙 \(record.sleepTime)"
+        energyLabel.text = "⚡️ \(record.energy)"
+        
+        selfEsteemLabel.text = setSelfEsteemLabel(for: record.selfEsteem)
+        annoyanceLabel.text = setAnnoyanceLabel(for: record.annoyance)
+        anxietyLabel.text = setAnxietyLabel(for: record.anxiety)
+    }
+    
     func setMoodEmoji(for mood: Int) -> String {
         switch mood {
         case 0:
@@ -36,10 +52,13 @@ class RecordViewCell: UICollectionViewCell {
             self.moodLabel.textColor = .systemPurple
             return "😔"
         case 2:
+            self.moodLabel.textColor = .black
             return "😕"
         case 3:
+            self.moodLabel.textColor = .black
             return "😐"
         case 4:
+            self.moodLabel.textColor = .black
             return "🙂"
         case 5:
             self.moodLabel.textColor = .systemOrange
@@ -48,6 +67,7 @@ class RecordViewCell: UICollectionViewCell {
             self.moodLabel.textColor = .systemRed
             return "🤩"
         default:
+            self.moodLabel.textColor = .black
             return "😐"
         }
     }
@@ -58,6 +78,7 @@ class RecordViewCell: UICollectionViewCell {
             self.selfEsteemLabel.textColor = .systemRed
             return "😍 \(selfEsteem)"
         default:
+            self.selfEsteemLabel.textColor = .black
             return "🥰 \(selfEsteem)"
         }
     }
@@ -68,6 +89,7 @@ class RecordViewCell: UICollectionViewCell {
             self.anxietyLabel.textColor = .systemRed
             return "😰 \(anxiety)"
         default:
+            self.anxietyLabel.textColor = .black
             return "😥 \(anxiety)"
         }
     }
@@ -78,6 +100,7 @@ class RecordViewCell: UICollectionViewCell {
             self.annoyanceLabel.textColor = .systemRed
             return "😡 \(annoyance)"
         default:
+            self.annoyanceLabel.textColor = .black
             return "😠 \(annoyance)"
         }
     }

@@ -14,7 +14,7 @@ extension NewRecordViewController {
                 
         if currentRecord == nil {
             database.collection("records").addDocument(data: [
-                "date": datePicker.date,
+                "date": dateManager.getCurrentDate(date: datePicker.date) ?? Date(),
                 "mood": moodSegmetedControl.selectedSegmentIndex,
                 "annoyance": annoyanceSegmentedControl.selectedSegmentIndex,
                 "anxiety": anxietySegmentedControl.selectedSegmentIndex,
@@ -51,7 +51,7 @@ extension NewRecordViewController {
         let reference = database.collection("records").document(id)
         
         reference.updateData([
-            "date": datePicker.date,
+            "date": dateManager.getCurrentDate(date: datePicker.date) ?? Date(),
             "mood": moodSegmetedControl.selectedSegmentIndex,
             "annoyance": annoyanceSegmentedControl.selectedSegmentIndex,
             "anxiety": anxietySegmentedControl.selectedSegmentIndex,
